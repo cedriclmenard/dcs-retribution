@@ -289,12 +289,25 @@ class LuaGenerator:
         fileref = self.mission.map_resource.add_resource_file(filename)
         trigger.add_action(DoScriptFile(fileref))
         self.mission.triggerrules.triggers.append(trigger)
+    
+    def inject_other_plugin_resources(self, plugin_mnemonic: str, file: str
+    ) -> None:
+        plugin_path = Path("./resources/plugins", plugin_mnemonic)
+
+        resource_path = Path(plugin_path, file)
+        if not resource_path.exists():
+            logging.error(f"Cannot find {resource_path} for plugin {plugin_mnemonic}")
+            return
+
+        filename = resource_path.resolve()
+        self.mission.map_resource.add_resource_file(filename)
 
     def inject_plugins(self) -> None:
         for plugin in LuaPluginManager.plugins():
             if plugin.enabled:
                 plugin.inject_scripts(self)
                 plugin.inject_configuration(self)
+                plugin.inject_other_resource_files(self)
 
 
 class LuaValue:

@@ -3,9 +3,9 @@
     "defaultValue": false,
     "specificOptions": [
         {
-            "nameInUI": "Test",
-            "mnemonic": "test",
-            "defaultValue": 15
+            "nameInUI": "Enable ship artillery",
+            "mnemonic": "shipArtilleryEnable",
+            "defaultValue": true
         }
     ],
     "scriptsWorkOrders": [
@@ -19,5 +19,8 @@
             "file": "artymbot-config.lua",
             "mnemonic": "artymbot-config"
         }
+    ],
+    "otherResourceFiles": [
+        "beep.wav"
     ]
 }

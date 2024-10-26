@@ -26,17 +26,17 @@
 
 -- arty plugin - configuration
 if dcsRetribution then
-    env.info("DCSRetribution|Mbot's Call Artillery Script plugin - Imported A")
     -- retrieve specific options values
     if dcsRetribution.plugins then
-        env.info("DCSRetribution|Mbot's Call Artillery Script plugin - Imported B")
         if dcsRetribution.plugins.artymbot then
             env.info("DCSRetribution|Mbot's Call Artillery Script plugin - Setting Up")
 			for _, data in pairs(dcsRetribution.artilleryGroups.groundArtillery) do
 				AddFS(data.groupName)
 			end
-			for _, data in pairs(dcsRetribution.artilleryGroups.shipArtillery) do
-				AddFS(data.groupName)
+			if dcsRetribution.plugins.artymbot.shipArtilleryEnable then
+				for _, data in pairs(dcsRetribution.artilleryGroups.shipArtillery) do
+					AddFS(data.groupName)
+				end
 			end
 			for _, data in pairs(dcsRetribution.forwardObserverUnits) do
 				AddFO(data.unitName)
