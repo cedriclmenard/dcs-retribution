@@ -1,0 +1,23 @@
+{
+    "nameInUI": "Mbot Call Artillery Script",
+    "defaultValue": false,
+    "specificOptions": [
+        {
+            "nameInUI": "Test",
+            "mnemonic": "test",
+            "defaultValue": 15
+        }
+    ],
+    "scriptsWorkOrders": [
+        {
+            "file": "CallArtilleryScript.lua",
+            "mnemonic": "artymbot"
+        }
+    ],
+    "configurationWorkOrders": [
+        {
+            "file": "artymbot-config.lua",
+            "mnemonic": "artymbot-config"
+        }
+    ]
+}
