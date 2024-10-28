@@ -31,6 +31,7 @@
 * **[Mission Generation]** Ability to choose whether player flights can spawn on the sixpack or not
 * **[Options]** New options in Mission Generator section: Limit AI radio callouts & Suppress AI radio callouts.
 * **[Options]** New option to use the combat landing flag in the landing waypoint task for helicopters.
+* **[UI/UX]** Sync package waypoints when primary flight's waypoints are updated and recreate other flights within the package to ensure JOIN, INGRESS & SPLIT are synced 
 
 ## Fixes
 * **[UI/UX]** A-10A flights can be edited again
