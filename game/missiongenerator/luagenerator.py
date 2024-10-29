@@ -221,8 +221,7 @@ class LuaGenerator:
         for cp in self.game.theater.control_points_for(player=True):
             for ground_object in cp.ground_objects:
                 for group in ground_object.groups:
-                    # check if first unit in group is ground-based or ship artillery
-                    # if any(unit.unit_type.unit_class == UnitClass.ARTILLERY for unit in group.units if unit.unit_type is not None):
+                    # Check if first unit in group is ground-based or ship artillery
                     unit = group.units[0]
                     if unit.unit_type is None:
                         continue
@@ -243,7 +242,7 @@ class LuaGenerator:
                 ground_artillery_group.add_key_value("groupName", frontline_group.group_name)
             
 
-        # add forward observer (FO) (TODO: maybe using new flight type?)
+        # Add forward observer (FO) (TODO: maybe adding new flight type "Foward Observer"?)
         forward_observer_object = lua_data.add_item("forwardObserverUnits")
         for flight in self.mission_data.flights:
             if not flight.friendly or not len(flight.client_units) > 0:

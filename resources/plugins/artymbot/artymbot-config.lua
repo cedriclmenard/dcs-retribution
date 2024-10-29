@@ -5,26 +5,7 @@
 -- see https://github.com/dcs-retribution/dcs-retribution
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- function AddFS(GroupName, SalvoSize)							--add new fire support group
--- 	if Group.getByName(GroupName) then
--- 		FS[GroupName] = {
--- 			callsign = Group.getByName(GroupName):getUnit(1):getCallsign(),
--- 			SalvoSize = SalvoSize or {10, 20, 30, 40},
--- 		}
--- 		if FS[GroupName].callsign == "" then
--- 			FS[GroupName].callsign = GroupName
--- 		else
--- 			local a,b = string.find(FS[GroupName].callsign, "%d%d")
--- 			FS[GroupName].callsign = string.sub(FS[GroupName].callsign, 1, a - 1) .. " " .. string.sub(FS[GroupName].callsign, a, a) .. "-" .. string.sub(FS[GroupName].callsign, b, b)		--put callsign "Enfield11" into format "Enfield 1-1"
--- 		end
--- 	end
--- end
-
--- function AddFO(UnitName)										--add new forward observer
--- 	FO[UnitName] = {}
--- end
-
--- arty plugin - configuration
+-- artymbot plugin - configuration
 if dcsRetribution then
     -- retrieve specific options values
     if dcsRetribution.plugins then
