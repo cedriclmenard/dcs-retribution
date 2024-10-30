@@ -152,7 +152,7 @@ class KneeboardPageWriter:
 
     def write(self, path: Path) -> None:
         self.image.save(path)
-        path.with_suffix(".txt").write_text(self.get_text_string())
+        path.with_suffix(".txt").write_text(self.get_text_string(), "utf8")
 
     @staticmethod
     def wrap_line(inputstr: str, max_length: int) -> str:

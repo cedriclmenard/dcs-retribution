@@ -798,7 +798,7 @@ class Settings:
         section=GAMEPLAY_SECTION,
         choices={v.value: v for v in StartType},
         default=StartType.COLD,
-        detail=("Default start type for flights containing Player/Client slots."),
+        detail="Default start type for flights containing Player/Client slots.",
     )
     nevatim_parking_fix: bool = boolean_option(
         "Force air-starts for aircraft at Nevatim and Ramon Airbase inoperable parking slots",
@@ -808,6 +808,16 @@ class Settings:
         detail=(
             "Air-starts forced for all aircraft at Nevatim and Ramon Airbase except parking slots "
             "which are known to work as of DCS World 2.9.4.53990."
+        ),
+    )
+    switch_baro_fix: bool = boolean_option(
+        "Switch altitude type of waypoints to AMSL above seas for helicopters",
+        page=MISSION_GENERATOR_PAGE,
+        section=GAMEPLAY_SECTION,
+        default=True,  # TODO: set to False or remove this when DCS is fixed?
+        detail=(
+            "AGL seems to reference the bottom of the sea which causes issues for helicopters"
+            " trying to fly at altitudes lower than the sea-bottom."
         ),
     )
     limit_ai_radios: bool = boolean_option(
