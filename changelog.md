@@ -39,6 +39,7 @@
 * **[New Game Wizard]** Campaign errors show a dialog again and avoid CTDs
 * **[UI]** Landmap wasn't updating when switching to a different theater
 * **[Mission Results Processor]** Squadrons of a sunken carrier are now disbanded
+* **[Mission Generation]** Introduced option to switch alt-type to AMSL during mission generation to avoid helicopters wanting to submerge over certain parts of the sea.
 
 # Retribution v1.3.1
 #### Note: Re-save your missions in DCS' Mission Editor to avoid possible crashes due to datalink (usually the case when F-16C blk50s are used) when hosting missions on a dedicated server.
