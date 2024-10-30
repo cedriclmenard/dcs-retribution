@@ -63,8 +63,8 @@ class MigrationUnpickler(pickle.Unpickler):
             return dcs.terrain.falklands.airports.Hipico_Flying_Club
         if name in ["SaveManager", "SaveGameBundle"]:
             return DummyObject
-        if name == "CaletaTortel":
-            return dcs.terrain.falklands.airports.Caleta_Tortel_Airport
+        if name in ["CaletaTortel", "Caleta_Tortel_Airport"]:
+            return dcs.terrain.Airport
         if module == "pydcs_extensions.f4b.f4b":
             return pydcs_extensions.f4
         if module == "pydcs_extensions.irondome.irondome":
@@ -87,13 +87,26 @@ class MigrationUnpickler(pickle.Unpickler):
             elif name == "Olenegorsk":
                 from dcs.terrain.kola.airports import Olenya
                 return Olenya
-            if name == "Bas_100":
+            elif name == "Bas_100":
                 from dcs.terrain.kola.airports import Vuojarvi
                 return Vuojarvi
         if module == "dcs.terrain.syria.airports":
             if name == "Amman":
                 from dcs.terrain.syria.airports import Marka
                 return Marka
+        if module == "dcs.terrain.falklands.airports":
+            if name == "Aerodromo_De_Tolhuin":
+                from dcs.terrain.falklands.airports import Tolhuin
+                return Tolhuin
+            elif name == "Porvenir_Airfield":
+                from dcs.terrain.falklands.airports import Porvenir
+                return Porvenir
+            elif name == "Aeropuerto_de_Gobernador_Gregores":
+                from dcs.terrain.falklands.airports import Gobernador_Gregores
+                return Gobernador_Gregores
+            elif name == "Aerodromo_O_Higgins":
+                from dcs.terrain.falklands.airports import O_Higgins
+                return O_Higgins
         if module in ["dcs.vehicles", "dcs.ships"]:
             try:
                 return super().find_class(module, name)
