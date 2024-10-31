@@ -200,16 +200,14 @@ class FlotGenerator:
             for vehicle_group, combat_group in player_groups:
                 self.mission_data.player_frontline_groups.append(
                     FrontlineUnitGroupsInfo(
-                        group_name=vehicle_group.name,
-                        unit_type=combat_group.unit_type
+                        group_name=vehicle_group.name, unit_type=combat_group.unit_type
                     )
                 )
 
             for vehicle_group, combat_group in enemy_groups:
                 self.mission_data.enemy_frontline_groups.append(
                     FrontlineUnitGroupsInfo(
-                        group_name=vehicle_group.name,
-                        unit_type=combat_group.unit_type
+                        group_name=vehicle_group.name, unit_type=combat_group.unit_type
                     )
                 )
 
