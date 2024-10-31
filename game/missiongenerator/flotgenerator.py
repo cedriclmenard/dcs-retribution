@@ -22,6 +22,7 @@ from dcs.task import (
     OrbitAction,
     SetImmortalCommand,
     SetInvisibleCommand,
+    OptAlarmState,
 )
 from dcs.triggers import Event, TriggerOnce
 from dcs.unit import Skill, Vehicle
@@ -817,6 +818,10 @@ class FlotGenerator:
             heading=heading.degrees,
         )
         group.hidden_on_mfd = True
+        if self.game.settings.perf_red_alert_state:
+            group.points[0].tasks.append(OptAlarmState(2))
+        else:
+            group.points[0].tasks.append(OptAlarmState(1))
 
         self.unit_map.add_front_line_units(group, cp, unit_type)
 
