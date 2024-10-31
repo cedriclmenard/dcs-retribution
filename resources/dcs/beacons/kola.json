@@ -125,6 +125,13 @@
   "hertz": 111700000,
   "channel": null
  },
+ "airfield20_0": {
+  "name": "andoya",
+  "callsign": "and",
+  "beacon_type": 3,
+  "hertz": 112200000,
+  "channel": null
+ },
  "airfield7_0": {
   "name": "BODO",
   "callsign": "BO",
