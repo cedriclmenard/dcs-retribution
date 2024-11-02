@@ -64,7 +64,7 @@ class MigrationUnpickler(pickle.Unpickler):
         if name in ["SaveManager", "SaveGameBundle"]:
             return DummyObject
         if name in ["CaletaTortel", "Caleta_Tortel_Airport"]:
-            return dcs.terrain.Airport
+            return dcs.terrain.Airport  # use base-class if airport was removed
         if module == "pydcs_extensions.f4b.f4b":
             return pydcs_extensions.f4
         if module == "pydcs_extensions.irondome.irondome":
@@ -94,6 +94,13 @@ class MigrationUnpickler(pickle.Unpickler):
             if name == "Amman":
                 from dcs.terrain.syria.airports import Marka
                 return Marka
+            elif name in [
+                "Helipad_88",
+                "Helipad_183",
+                "Helipad_217",
+                "Helipad_218"
+            ]:
+                return dcs.terrain.Airport  # use base-class if airport was removed
         if module == "dcs.terrain.falklands.airports":
             if name == "Aerodromo_De_Tolhuin":
                 from dcs.terrain.falklands.airports import Tolhuin
