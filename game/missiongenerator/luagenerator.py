@@ -263,8 +263,6 @@ class LuaGenerator:
                 continue
 
             for client_unit in flight.client_units:
-                if client_unit.skill not in (Skill.Client, Skill.Player):
-                    continue
                 forward_observer = forward_observer_object.add_item()
                 forward_observer.add_key_value("unitName", client_unit.name)
 
