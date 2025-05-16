@@ -5,6 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Python Debugger: Current File with Arguments",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": "${command:pickArgs}"
+    },
+    {
       "name": "Python: Main",
       "type": "python",
       "request": "launch",
@@ -25,7 +33,9 @@
         "PYTHONPATH": ".;./pydcs",
         "CORS_ALLOW_DEBUG_SERVER": "true"
       },
-      "args": ["--dev"],
+      "args": [
+        "--dev"
+      ],
       "preLaunchTask": "Prepare Environment"
     },
     {
@@ -35,7 +45,8 @@
       "cwd": "${workspaceRoot}\\client",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
-          "run", "start"
+        "run",
+        "start"
       ],
       "env": {
         "BROWSER": "none"
@@ -61,7 +72,9 @@
       "env": {
         "PYTHONPATH": ".;./pydcs"
       },
-      "args": ["resources/layouts/anti_air/S-300_Site.miz"]
+      "args": [
+        "resources/layouts/anti_air/S-300_Site.miz"
+      ]
     },
   ]
 }
