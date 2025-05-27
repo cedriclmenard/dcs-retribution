@@ -13,15 +13,19 @@ from shapely import validation
 from shapely.geometry import LineString, MultiPolygon, Polygon, shape
 from shapely.ops import unary_union
 
-from game.profiling import logged_duration
-from game.theater import ConflictTheater, Landmap
-from game.theater.theaterloader import TheaterLoader
-from resources.tools.generate_landmap import to_multipoly
-
 THIS_DIR = Path(__file__).resolve()
 TOP_DIR = THIS_DIR.parents[2]
 IMPORT_DIR = TOP_DIR / "unshipped_data/arcgis_maps"
 RESOURCES_DIR = TOP_DIR / "resources"
+
+import sys
+sys.path.append(str(TOP_DIR))
+
+from game.profiling import logged_duration
+from game.theater import ConflictTheater
+from game.theater.landmap import Landmap
+from game.theater.theaterloader import TheaterLoader
+from resources.tools.generate_landmap import to_multipoly
 
 
 ALL_THEATER_NAMES = [d.name for d in (RESOURCES_DIR / "theaters").iterdir()]
